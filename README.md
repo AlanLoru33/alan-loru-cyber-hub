@@ -1,6 +1,3 @@
-# alan-loru-cyber-hub
-"Terminal de Operaciones IT de Alan Loru. Portafolio táctico especializado en Service Desk, Ciberseguridad, Soporte Técnico Avanzado y Soluciones Remotas 24/7. Node: Grand Bourg, AR."
-
 # ⚡ ALAN LORU | CYBER-REPAIR & SYSTEM OPERATIONS
 
 ![Status](https://img.shields.io/badge/Status-Operational-00ffff?style=for-the-badge)
