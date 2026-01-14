@@ -1,12 +1,15 @@
 <!doctype html>
 <html lang="es" class="h-full">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ALAN LORU | MASTER IT OPERATIONS & SOC</title>
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
 
   <style>
     /* ALAN LORU CORE ENGINE V9.0 - ULTRA EXTENDED
@@ -23,19 +26,43 @@
       --glass-border: rgba(0, 255, 255, 0.2);
     }
 
-    * { cursor: crosshair !important; box-sizing: border-box; scroll-behavior: smooth; }
-    body { background: var(--bg-dark); color: #e0e6ed; font-family: 'Rajdhani', sans-serif; overflow-x: hidden; margin: 0; }
+    * {
+      cursor: crosshair !important;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: #e0e6ed;
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+    }
 
     /* CRT SCANLINE EFFECT */
     .crt-vessel::before {
-      content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0;
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
-                  linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
-      z-index: 9999; background-size: 100% 2px, 2px 100%; pointer-events: none;
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+      z-index: 9999;
+      background-size: 100% 2px, 2px 100%;
+      pointer-events: none;
       opacity: 0.8;
     }
 
-    #matrix-bg { position: fixed; inset: 0; z-index: 0; opacity: 0.15; }
+    #matrix-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.15;
+    }
 
     /* CYBERCARDS STRUCTURE */
     .service-module {
@@ -45,17 +72,28 @@
       clip-path: polygon(0 0, 92% 0, 100% 12%, 100% 100%, 8% 100%, 0 88%);
       transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
+
     .service-module:hover {
       border-color: var(--neon-cyan);
       box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
       transform: translateY(-15px) rotateX(2deg);
     }
+
     .service-module::before {
-      content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
       background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-      transform: translateX(-100%); transition: 0.6s;
+      transform: translateX(-100%);
+      transition: 0.6s;
     }
-    .service-module:hover::before { transform: translateX(100%); }
+
+    .service-module:hover::before {
+      transform: translateX(100%);
+    }
 
     /* BUTTONS */
     .btn-tactical {
@@ -71,6 +109,7 @@
       transition: 0.5s;
       overflow: hidden;
     }
+
     .btn-tactical:hover {
       background: var(--neon-cyan);
       color: #000;
@@ -84,17 +123,35 @@
       border: 1px solid var(--neon-cyan);
       transition: 1s;
     }
-    #radar-map:hover { filter: grayscale(0) invert(0) sepia(0) brightness(1); }
+
+    #radar-map:hover {
+      filter: grayscale(0) invert(0) sepia(0) brightness(1);
+    }
 
     /* TEXT GLITCH */
-    .glitch-text { position: relative; }
-    .glitch-text::before {
-      content: attr(data-text); position: absolute; left: -2px; text-shadow: 2px 0 var(--neon-magenta);
-      top: 0; overflow: hidden; clip: rect(0, 900px, 0, 0); animation: noise-1 3s infinite linear alternate-reverse;
+    .glitch-text {
+      position: relative;
     }
+
+    .glitch-text::before {
+      content: attr(data-text);
+      position: absolute;
+      left: -2px;
+      text-shadow: 2px 0 var(--neon-magenta);
+      top: 0;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: noise-1 3s infinite linear alternate-reverse;
+    }
+
     @keyframes noise-1 {
-      0% { clip: rect(20px, 9999px, 40px, 0); }
-      100% { clip: rect(80px, 9999px, 100px, 0); }
+      0% {
+        clip: rect(20px, 9999px, 40px, 0);
+      }
+
+      100% {
+        clip: rect(80px, 9999px, 100px, 0);
+      }
     }
 
     /* TERMINAL */
@@ -108,9 +165,25 @@
     }
 
     /* SKILLS LOADERS */
-    .skill-container { margin-bottom: 25px; }
-    .skill-bar-bg { background: rgba(255,255,255,0.05); height: 8px; width: 100%; border-radius: 4px; overflow: hidden; }
-    .skill-fill { height: 100%; background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); width: 0%; transition: width 2s ease-out; }
+    .skill-container {
+      margin-bottom: 25px;
+    }
+
+    .skill-bar-bg {
+      background: rgba(255, 255, 255, 0.05);
+      height: 8px;
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 10px var(--neon-cyan);
+      width: 0%;
+      transition: width 2s ease-out;
+    }
 
     /* HEXAGON AVATAR */
     .hex-vessel {
@@ -118,12 +191,14 @@
       background: var(--neon-cyan);
       padding: 3px;
     }
+
     .hex-content {
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       background: black;
     }
   </style>
 </head>
+
 <body class="crt-vessel">
 
   <canvas id="matrix-bg"></canvas>
@@ -131,20 +206,24 @@
   <audio id="bg-synth" loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
   </audio>
-  <audio id="click-sfx"><source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg"></audio>
+  <audio id="click-sfx">
+    <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
+  </audio>
 
   <nav class="fixed top-0 w-full z-[1000] bg-black/90 backdrop-blur-md border-b border-white/10 px-10 py-5">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-4">
         <span class="w-3 h-3 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_red]"></span>
-        <span class="font-cyber text-[10px] tracking-[0.5em] text-cyan-400 font-bold uppercase">Uplink Status: Encrypted // Grand Bourg Node</span>
+        <span class="font-cyber text-[10px] tracking-[0.5em] text-cyan-400 font-bold uppercase">Uplink Status: Encrypted
+          // Grand Bourg Node</span>
       </div>
       <div class="hidden lg:flex gap-10 font-cyber text-[10px] tracking-widest uppercase">
         <a href="#servicios" onmouseover="playSFX()" class="hover:text-cyan-400 transition">Módulos</a>
         <a href="#proyectos" onmouseover="playSFX()" class="hover:text-cyan-400 transition">Registros</a>
         <a href="#contacto" onmouseover="playSFX()" class="hover:text-cyan-400 transition">Localización</a>
-        <button onclick="toggleMusic()" class="text-magenta-500 border border-magenta-500/30 px-4 py-1 hover:bg-magenta-500 hover:text-black transition">
-            Audio: <span id="audio-ui">OFF</span>
+        <button onclick="toggleMusic()"
+          class="text-magenta-500 border border-magenta-500/30 px-4 py-1 hover:bg-magenta-500 hover:text-black transition">
+          Audio: <span id="audio-ui">OFF</span>
         </button>
       </div>
     </div>
@@ -152,219 +231,262 @@
 
   <section class="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 pt-20">
     <div class="mb-16 relative group">
-        <div class="absolute -inset-10 bg-cyan-500/10 blur-[120px] rounded-full opacity-0 group-hover:opacity-100 transition-duration-1000"></div>
-        <div class="hex-vessel w-64 h-72">
-            <div class="hex-content w-full h-full flex items-center justify-center overflow-hidden">
-                <img src="https://i.ibb.co/Nd154DD2/logo-alan.png" class="w-full h-full object-cover grayscale brightness-125 hover:grayscale-0 transition-all duration-1000 scale-110">
-            </div>
+      <div
+        class="absolute -inset-10 bg-cyan-500/10 blur-[120px] rounded-full opacity-0 group-hover:opacity-100 transition-duration-1000">
+      </div>
+      <div class="hex-vessel w-64 h-72">
+        <div class="hex-content w-full h-full flex items-center justify-center overflow-hidden">
+          <img src="https://i.ibb.co/Nd154DD2/logo-alan.png"
+            class="w-full h-full object-cover grayscale brightness-125 hover:grayscale-0 transition-all duration-1000 scale-110">
         </div>
-        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-cyan-500 text-black px-8 py-1 font-cyber text-[9px] font-black tracking-widest">
-            OPERATOR_ID: ALAN_LORU
-        </div>
+      </div>
+      <div
+        class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-cyan-500 text-black px-8 py-1 font-cyber text-[9px] font-black tracking-widest">
+        OPERATOR_ID: ALAN_LORU
+      </div>
     </div>
 
-    <h1 class="glitch-text font-cyber text-6xl md:text-[9rem] font-black tracking-tighter text-center leading-none text-white" data-text="ALAN LORU">
+    <h1
+      class="glitch-text font-cyber text-6xl md:text-[9rem] font-black tracking-tighter text-center leading-none text-white"
+      data-text="ALAN LORU">
       ALAN LORU
     </h1>
-    
-    <div class="flex items-center gap-6 mt-8">
-        <div class="h-px w-20 bg-magenta-500"></div>
-        <p class="font-tech text-magenta-500 text-xl md:text-3xl font-bold tracking-[0.6em] uppercase">IT Specialist & System Administrator</p>
-        <div class="h-px w-20 bg-magenta-500"></div>
+
+    <div class="flex items-center justify-center gap-6 mt-8 w-full">
+      <div class="h-px w-10 md:w-20 bg-magenta-500"></div>
+      <p class="font-tech text-magenta-500 text-xl md:text-3xl font-bold tracking-[0.6em] uppercase text-center">
+        IT Specialist System Administrator & Frontend Designer
+      </p>
+      <div class="h-px w-10 md:w-20 bg-magenta-500"></div>
+    </div>
     </div>
 
     <div class="mt-20 flex flex-wrap justify-center gap-8">
-        <a href="https://wa.me/541151056797" onmouseover="playSFX()" class="btn-tactical">Request_Intervention</a>
-        <a href="https://www.linkedin.com/in/alan-loru-servicedesk/" target="_blank" onmouseover="playSFX()" class="btn-tactical !border-magenta-500 !text-magenta-500 hover:!bg-magenta-500">View_LinkedIn</a>
+      <a href="https://wa.me/541151056797" onmouseover="playSFX()" class="btn-tactical">Request_Intervention</a>
+      <a href="https://www.linkedin.com/in/alan-loru-servicedesk/" target="_blank" onmouseover="playSFX()"
+        class="btn-tactical !border-magenta-500 !text-magenta-500 hover:!bg-magenta-500">View_LinkedIn</a>
     </div>
   </section>
 
   <section id="servicios" class="relative z-10 max-w-7xl mx-auto px-6 py-40">
     <div class="flex flex-col md:flex-row justify-between items-end mb-32">
-        <div class="max-w-2xl">
-            <h2 class="font-cyber text-5xl text-white tracking-tighter uppercase mb-6">Service_Matrix_v9</h2>
-            <p class="font-tech text-xl text-gray-500">Despliegue de soluciones técnicas avanzadas para infraestructuras domésticas y corporativas. Especialista en diagnóstico de hardware y seguridad de sistemas.</p>
-        </div>
-        <div class="text-right mt-10 md:mt-0">
-            <p class="font-mono text-[10px] text-cyan-500 uppercase">Availability: 24/7 Remote / Local</p>
-            <div class="w-48 h-1 bg-cyan-500 ml-auto mt-2"></div>
-        </div>
+      <div class="max-w-2xl">
+        <h2 class="font-cyber text-5xl text-white tracking-tighter uppercase mb-6">Service_Matrix_v9</h2>
+        <p class="font-tech text-xl text-gray-500">Despliegue de soluciones técnicas avanzadas para infraestructuras
+          domésticas y corporativas. Especialista en diagnóstico de hardware y seguridad de sistemas.</p>
+      </div>
+      <div class="text-right mt-10 md:mt-0">
+        <p class="font-mono text-[10px] text-cyan-500 uppercase">Availability: 24/7 Remote / Local</p>
+        <div class="w-48 h-1 bg-cyan-500 ml-auto mt-2"></div>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        
-        <div class="service-module p-12">
-            <div class="font-cyber text-3xl text-cyan-500 mb-8 opacity-40">01</div>
-            <h3 class="text-white font-cyber text-2xl mb-4">Reparación & Hardware</h3>
-            <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Intervención física de equipos. Limpieza interna, cambio de componentes, gestión térmica avanzada y reparación de periféricos.</p>
-            <div class="space-y-3 font-mono text-[9px] text-cyan-400/60 uppercase">
-                <p>> Mantenimiento Preventivo</p>
-                <p>> Recambio de Unidades SSD/RAM</p>
-                <p>> Soldadura y Reparación Electrónica</p>
-            </div>
-        </div>
 
-        <div class="service-module p-12 border-t-2 border-t-magenta-500">
-            <div class="font-cyber text-3xl text-magenta-500 mb-8 opacity-40">02</div>
-            <h3 class="text-white font-cyber text-2xl mb-4">Software & OS</h3>
-            <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Instalación de Windows 10/11 con optimización de registros. Implementación de Paquete Office completo y herramientas de productividad.</p>
-            <div class="space-y-3 font-mono text-[9px] text-magenta-400/60 uppercase">
-                <p>> Instalación Limpia (Sin Bloatware)</p>
-                <p>> Activación de Suite Office</p>
-                <p>> Configuración de Drivers</p>
-            </div>
+      <div class="service-module p-12">
+        <div class="font-cyber text-3xl text-cyan-500 mb-8 opacity-40">01</div>
+        <h3 class="text-white font-cyber text-2xl mb-4">Reparación & Hardware</h3>
+        <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Intervención física de equipos. Limpieza
+          interna, cambio de componentes, gestión térmica avanzada y reparación de periféricos.</p>
+        <div class="space-y-3 font-mono text-[9px] text-cyan-400/60 uppercase">
+          <p>> Mantenimiento Preventivo</p>
+          <p>> Recambio de Unidades SSD/RAM</p>
+          <p>> Soldadura y Reparación Electrónica</p>
         </div>
+      </div>
 
-        <div class="service-module p-12 border-t-2 border-t-yellow-500">
-            <div class="font-cyber text-3xl text-yellow-500 mb-8 opacity-40">03</div>
-            <h3 class="text-white font-cyber text-2xl mb-4">Instalación de Impresoras</h3>
-            <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Configuración de impresoras locales y en red (Wi-Fi). Solución de errores de cola de impresión, escaneo a carpeta y mantenimiento de inyectores.</p>
-            <div class="space-y-3 font-mono text-[9px] text-yellow-400/60 uppercase">
-                <p>> Configuración Wi-Fi / Red</p>
-                <p>> Escaneo a PDF / Email</p>
-                <p>> Troubleshooting de Conectividad</p>
-            </div>
+      <div class="service-module p-12 border-t-2 border-t-magenta-500">
+        <div class="font-cyber text-3xl text-magenta-500 mb-8 opacity-40">02</div>
+        <h3 class="text-white font-cyber text-2xl mb-4">Software & OS</h3>
+        <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Instalación de Windows 10/11 con optimización de
+          registros. Implementación de Paquete Office completo y herramientas de productividad.</p>
+        <div class="space-y-3 font-mono text-[9px] text-magenta-400/60 uppercase">
+          <p>> Instalación Limpia (Sin Bloatware)</p>
+          <p>> Activación de Suite Office</p>
+          <p>> Configuración de Drivers</p>
         </div>
+      </div>
 
-        <div class="service-module p-12">
-            <div class="font-cyber text-3xl text-cyan-500 mb-8 opacity-40">04</div>
-            <h3 class="text-white font-cyber text-2xl mb-4">Configuraciones Domésticas</h3>
-            <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Optimización de redes hogareñas, routers, repetidores Wi-Fi y dispositivos inteligentes. Soporte personalizado para usuarios en casa.</p>
-            <div class="space-y-3 font-mono text-[9px] text-cyan-400/60 uppercase">
-                <p>> Extensión de Cobertura Wi-Fi</p>
-                <p>> Configuración de Routers/Modems</p>
-                <p>> Asistencia Directa al Usuario</p>
-            </div>
+      <div class="service-module p-12 border-t-2 border-t-yellow-500">
+        <div class="font-cyber text-3xl text-yellow-500 mb-8 opacity-40">03</div>
+        <h3 class="text-white font-cyber text-2xl mb-4">Instalación de Impresoras</h3>
+        <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Configuración de impresoras locales y en red
+          (Wi-Fi). Solución de errores de cola de impresión, escaneo a carpeta y mantenimiento de inyectores.</p>
+        <div class="space-y-3 font-mono text-[9px] text-yellow-400/60 uppercase">
+          <p>> Configuración Wi-Fi / Red</p>
+          <p>> Escaneo a PDF / Email</p>
+          <p>> Troubleshooting de Conectividad</p>
         </div>
+      </div>
 
-        <div class="service-module p-12 border-t-2 border-t-red-600 bg-red-600/5">
-            <div class="font-cyber text-3xl text-red-600 mb-8 opacity-40">05</div>
-            <h3 class="text-white font-cyber text-2xl mb-4">Remoto 24/7</h3>
-            <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Asistencia técnica instantánea mediante AnyDesk o TeamViewer. Resolución de errores, virus y configuración de software sin moverte de tu silla.</p>
-            <div class="space-y-3 font-mono text-[9px] text-red-600/60 uppercase">
-                <p>> Soporte de Emergencia</p>
-                <p>> Eliminación de Malware Remota</p>
-                <p>> Troubleshooting de Redes</p>
-            </div>
+      <div class="service-module p-12">
+        <div class="font-cyber text-3xl text-cyan-500 mb-8 opacity-40">04</div>
+        <h3 class="text-white font-cyber text-2xl mb-4">Configuraciones Domésticas</h3>
+        <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Optimización de redes hogareñas, routers,
+          repetidores Wi-Fi y dispositivos inteligentes. Soporte personalizado para usuarios en casa.</p>
+        <div class="space-y-3 font-mono text-[9px] text-cyan-400/60 uppercase">
+          <p>> Extensión de Cobertura Wi-Fi</p>
+          <p>> Configuración de Routers/Modems</p>
+          <p>> Asistencia Directa al Usuario</p>
         </div>
+      </div>
 
-        <div class="service-module p-12 border-t-2 border-t-cyan-500">
-            <div class="font-cyber text-3xl text-cyan-500 mb-8 opacity-40">06</div>
-            <h3 class="text-white font-cyber text-2xl mb-4">Security & Unlock</h3>
-            <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Liberación de contraseñas de Windows, recuperación de datos de discos dañados y aseguramiento de cuentas digitales.</p>
-            <div class="space-y-3 font-mono text-[9px] text-cyan-400/60 uppercase">
-                <p>> Password Recovery</p>
-                <p>> Hardening de Sistemas</p>
-                <p>> Recuperación Forense</p>
-            </div>
+      <div class="service-module p-12 border-t-2 border-t-red-600 bg-red-600/5">
+        <div class="font-cyber text-3xl text-red-600 mb-8 opacity-40">05</div>
+        <h3 class="text-white font-cyber text-2xl mb-4">Remoto 24/7</h3>
+        <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Asistencia técnica instantánea mediante AnyDesk
+          o TeamViewer. Resolución de errores, virus y configuración de software sin moverte de tu silla.</p>
+        <div class="space-y-3 font-mono text-[9px] text-red-600/60 uppercase">
+          <p>> Soporte de Emergencia</p>
+          <p>> Eliminación de Malware Remota</p>
+          <p>> Troubleshooting de Redes</p>
         </div>
+      </div>
+
+      <div class="service-module p-12 border-t-2 border-t-cyan-500">
+        <div class="font-cyber text-3xl text-cyan-500 mb-8 opacity-40">06</div>
+        <h3 class="text-white font-cyber text-2xl mb-4">Security & Unlock</h3>
+        <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Liberación de contraseñas de Windows,
+          recuperación de datos de discos dañados y aseguramiento de cuentas digitales.</p>
+        <div class="space-y-3 font-mono text-[9px] text-cyan-400/60 uppercase">
+          <p>> Password Recovery</p>
+          <p>> Hardening de Sistemas</p>
+          <p>> Recuperación Forense</p>
+        </div>
+      </div>
+
+      <div class="service-module p-12 border-t-2 border-t-green-400 bg-green-400/5">
+        <div class="font-cyber text-3xl text-green-400 mb-8 opacity-40">07</div>
+        <h3 class="text-white font-cyber text-2xl mb-4">Diseño Web & Frontend</h3>
+        <p class="text-gray-400 font-tech text-sm leading-relaxed mb-8">Creación de interfaces tácticas y modernas.
+          Desarrollo responsive con Tailwind CSS y arquitecturas visuales de alto impacto.</p>
+        <div class="space-y-3 font-mono text-[9px] text-green-400/60 uppercase">
+          <p>> UI/UX Táctico (Dark Mode)</p>
+          <p>> Sitios Autogestionables</p>
+          <p>> Optimización Core Web Vitals</p>
+        </div>
+      </div>
 
     </div>
   </section>
 
   <section id="proyectos" class="relative z-10 max-w-7xl mx-auto px-6 py-20 bg-black/40">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <a href="https://alanloru33.github.io/Mision-Muebles-Catalogo/" target="_blank" class="group relative overflow-hidden h-96 border border-white/5 service-module !p-0">
-            <img src="https://i.ibb.co/4g4Dyztc/Misionmueble1.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000">
-            <div class="absolute bottom-0 left-0 w-full p-8 bg-black/80 backdrop-blur-sm border-t border-cyan-500/30">
-                <h4 class="font-cyber text-white text-xl">Misión Muebles</h4>
-                <p class="font-mono text-[10px] text-cyan-500 uppercase mt-2">Inventory_Management_System</p>
-            </div>
-        </a>
-        <a href="https://alanloru33.github.io/Micatalogo-AROMANZA-ILUMINARTE/" target="_blank" class="group relative overflow-hidden h-96 border border-white/5 service-module !p-0">
-            <img src="https://i.ibb.co/0p9ngvH9/Azuvicka.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000">
-            <div class="absolute bottom-0 left-0 w-full p-8 bg-black/80 backdrop-blur-sm border-t border-magenta-500/30">
-                <h4 class="font-cyber text-white text-xl">Azuvicka Catalog</h4>
-                <p class="font-mono text-[10px] text-magenta-500 uppercase mt-2">E-Commerce_Visual_Core</p>
-            </div>
-        </a>
-        <a href="https://alanloru33.github.io/Mision-Mueble-EMA/" target="_blank" class="group relative overflow-hidden h-96 border border-white/5 service-module !p-0">
-            <img src="https://i.ibb.co/XxZwXhpc/Misionmueble2.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000">
-            <div class="absolute bottom-0 left-0 w-full p-8 bg-black/80 backdrop-blur-sm border-t border-yellow-500/30">
-                <h4 class="font-cyber text-white text-xl">Misión EMA</h4>
-                <p class="font-mono text-[10px] text-yellow-500 uppercase mt-2">Responsive_Mobile_UI</p>
-            </div>
-        </a>
+      <a href="https://alanloru33.github.io/Mision-Muebles-Catalogo/" target="_blank"
+        class="group relative overflow-hidden h-96 border border-white/5 service-module !p-0">
+        <img src="https://i.ibb.co/4g4Dyztc/Misionmueble1.png"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000">
+        <div class="absolute bottom-0 left-0 w-full p-8 bg-black/80 backdrop-blur-sm border-t border-cyan-500/30">
+          <h4 class="font-cyber text-white text-xl">Misión Muebles</h4>
+          <p class="font-mono text-[10px] text-cyan-500 uppercase mt-2">Inventory_Management_System</p>
+        </div>
+      </a>
+      <a href="https://alanloru33.github.io/Micatalogo-AROMANZA-ILUMINARTE/" target="_blank"
+        class="group relative overflow-hidden h-96 border border-white/5 service-module !p-0">
+        <img src="https://i.ibb.co/0p9ngvH9/Azuvicka.png"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000">
+        <div class="absolute bottom-0 left-0 w-full p-8 bg-black/80 backdrop-blur-sm border-t border-magenta-500/30">
+          <h4 class="font-cyber text-white text-xl">Azuvicka Catalog</h4>
+          <p class="font-mono text-[10px] text-magenta-500 uppercase mt-2">E-Commerce_Visual_Core</p>
+        </div>
+      </a>
+      <a href="https://alanloru33.github.io/Mision-Mueble-EMA/" target="_blank"
+        class="group relative overflow-hidden h-96 border border-white/5 service-module !p-0">
+        <img src="https://i.ibb.co/XxZwXhpc/Misionmueble2.png"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000">
+        <div class="absolute bottom-0 left-0 w-full p-8 bg-black/80 backdrop-blur-sm border-t border-yellow-500/30">
+          <h4 class="font-cyber text-white text-xl">Misión EMA</h4>
+          <p class="font-mono text-[10px] text-yellow-500 uppercase mt-2">Responsive_Mobile_UI</p>
+        </div>
+      </a>
     </div>
   </section>
 
   <section class="relative z-10 max-w-5xl mx-auto px-6 py-40">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div class="border-l-4 border-l-cyan-500 p-10 bg-white/5">
-            <p class="font-tech text-2xl text-gray-300 italic">"Alan instaló toda la red de impresoras en mi oficina y configuró los accesos remotos. Su capacidad técnica es sorprendente."</p>
-            <div class="mt-8">
-                <p class="font-cyber text-white text-xs">Ing. Carlos M.</p>
-                <p class="font-mono text-cyan-500 text-[9px] uppercase mt-1">Verified Client_ID: 9822</p>
-            </div>
+      <div class="border-l-4 border-l-cyan-500 p-10 bg-white/5">
+        <p class="font-tech text-2xl text-gray-300 italic">"Alan instaló toda la red de impresoras en mi oficina y
+          configuró los accesos remotos. Su capacidad técnica es sorprendente."</p>
+        <div class="mt-8">
+          <p class="font-cyber text-white text-xs">Ing. Carlos M.</p>
+          <p class="font-mono text-cyan-500 text-[9px] uppercase mt-1">Verified Client_ID: 9822</p>
         </div>
-        <div class="border-l-4 border-l-magenta-500 p-10 bg-white/5">
-            <p class="font-tech text-2xl text-gray-300 italic">"Resolvió un problema de hardware que otros técnicos daban por perdido. Excelente servicio en Grand Bourg."</p>
-            <div class="mt-8">
-                <p class="font-cyber text-white text-xs">Elena R.</p>
-                <p class="font-mono text-magenta-500 text-[9px] uppercase mt-1">Verified Client_ID: 1045</p>
-            </div>
+      </div>
+      <div class="border-l-4 border-l-magenta-500 p-10 bg-white/5">
+        <p class="font-tech text-2xl text-gray-300 italic">"Resolvió un problema de hardware que otros técnicos daban
+          por perdido. Excelente servicio en Grand Bourg."</p>
+        <div class="mt-8">
+          <p class="font-cyber text-white text-xs">Elena R.</p>
+          <p class="font-mono text-magenta-500 text-[9px] uppercase mt-1">Verified Client_ID: 1045</p>
         </div>
+      </div>
     </div>
   </section>
 
   <section id="contacto" class="relative z-10 max-w-7xl mx-auto px-6 py-20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div>
-            <h2 class="font-cyber text-5xl text-white mb-8 tracking-tighter uppercase">Operations_Base</h2>
-            <div class="flex gap-4 mb-10">
-                <div class="bg-cyan-500/10 p-6 border border-cyan-500/20 rounded">
-                    <p class="text-[10px] text-gray-500 font-mono mb-2 uppercase">Localidad</p>
-                    <p class="text-cyan-400 font-cyber text-xl">Grand Bourg, AR</p>
-                </div>
-                <div class="bg-magenta-500/10 p-6 border border-magenta-500/20 rounded">
-                    <p class="text-[10px] text-gray-500 font-mono mb-2 uppercase">Status</p>
-                    <p class="text-magenta-400 font-cyber text-xl animate-pulse">DEPLOY_READY</p>
-                </div>
-            </div>
-            <p class="font-tech text-xl text-gray-400 mb-10">Servicio técnico presencial en toda la zona norte y soporte remoto global las 24 horas del día.</p>
-            <a href="https://wa.me/541151056797" class="btn-tactical block w-full text-center">Open_Comm_Channel</a>
+      <div>
+        <h2 class="font-cyber text-5xl text-white mb-8 tracking-tighter uppercase">Operations_Base</h2>
+        <div class="flex gap-4 mb-10">
+          <div class="bg-cyan-500/10 p-6 border border-cyan-500/20 rounded">
+            <p class="text-[10px] text-gray-500 font-mono mb-2 uppercase">Localidad</p>
+            <p class="text-cyan-400 font-cyber text-xl">Grand Bourg, AR</p>
+          </div>
+          <div class="bg-magenta-500/10 p-6 border border-magenta-500/20 rounded">
+            <p class="text-[10px] text-gray-500 font-mono mb-2 uppercase">Status</p>
+            <p class="text-magenta-400 font-cyber text-xl animate-pulse">DEPLOY_READY</p>
+          </div>
         </div>
-        <div class="relative">
-            <div class="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-cyan-500"></div>
-            <iframe id="radar-map" src="https://maps.google.com/maps?q=Grand%20Bourg,%20Provincia%20de%20Buenos%20Aires&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <div class="absolute -bottom-4 -right-4 w-20 h-20 border-b-2 border-r-2 border-cyan-500"></div>
-        </div>
+        <p class="font-tech text-xl text-gray-400 mb-10">Servicio técnico presencial en toda la zona norte y soporte
+          remoto global las 24 horas del día.</p>
+        <a href="https://wa.me/541151056797" class="btn-tactical block w-full text-center">Open_Comm_Channel</a>
+      </div>
+      <div class="relative">
+        <div class="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-cyan-500"></div>
+        <iframe id="radar-map"
+          src="https://maps.google.com/maps?q=Grand%20Bourg,%20Provincia%20de%20Buenos%20Aires&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="absolute -bottom-4 -right-4 w-20 h-20 border-b-2 border-r-2 border-cyan-500"></div>
+      </div>
     </div>
   </section>
 
   <section class="relative z-10 max-w-7xl mx-auto px-6 py-20">
     <div class="bg-black/95 border border-white/10 rounded overflow-hidden shadow-2xl">
-        <div class="bg-zinc-900 px-6 py-2 text-gray-500 font-mono text-[10px] flex justify-between">
-            <span>LORU_REMOTE_ADMIN_v.9.0.4</span>
-            <span>UPLINK_STABLE</span>
-        </div>
-        <div id="terminal-feed" class="terminal-output p-10 text-cyan-400/80">
-            </div>
+      <div class="bg-zinc-900 px-6 py-2 text-gray-500 font-mono text-[10px] flex justify-between">
+        <span>LORU_REMOTE_ADMIN_v.9.0.4</span>
+        <span>UPLINK_STABLE</span>
+      </div>
+      <div id="terminal-feed" class="terminal-output p-10 text-cyan-400/80">
+      </div>
     </div>
   </section>
 
   <footer class="relative z-10 bg-black pt-40 pb-20 border-t border-cyan-500/30">
     <div class="max-w-7xl mx-auto px-10 grid grid-cols-1 md:grid-cols-4 gap-20">
-        <div class="col-span-1 md:col-span-2">
-            <h5 class="font-cyber text-4xl text-white font-black mb-8">ALAN <span class="text-cyan-400">LORU</span></h5>
-            <p class="font-tech text-gray-400 text-lg leading-relaxed max-w-md">Analista SOC y Especialista en Soporte Técnico de nivel avanzado. Solucionando problemas de infraestructura desde Grand Bourg para el mundo.</p>
-        </div>
-        <div class="space-y-6">
-            <h6 class="font-cyber text-[10px] text-cyan-400 tracking-widest uppercase">Digital_Networks</h6>
-            <ul class="font-tech text-gray-500 space-y-4">
-                <li><a href="https://www.linkedin.com/in/alan-loru-servicedesk/" class="hover:text-cyan-400 transition">>> LinkedIn_Profile</a></li>
-                <li><a href="https://github.com/alanloru33" class="hover:text-cyan-400 transition">>> GitHub_Access</a></li>
-                <li><a href="mailto:alanloru26@gmail.com" class="hover:text-cyan-400 transition">>> Send_Email</a></li>
-            </ul>
-        </div>
-        <div>
-            <h6 class="font-cyber text-[10px] text-magenta-500 tracking-widest uppercase">Contact_Uplink</h6>
-            <p class="font-cyber text-2xl text-white mt-4">+54 11 5105-6797</p>
-            <p class="font-mono text-[9px] text-gray-600 mt-2 uppercase tracking-tighter">Verified_Phone // WhatsApp_Secured</p>
-        </div>
+      <div class="col-span-1 md:col-span-2">
+        <h5 class="font-cyber text-4xl text-white font-black mb-8">ALAN <span class="text-cyan-400">LORU</span></h5>
+        <p class="font-tech text-gray-400 text-lg leading-relaxed max-w-md">Analista SOC y Especialista en Soporte
+          Técnico de nivel avanzado. Solucionando problemas de infraestructura desde Grand Bourg para el mundo.</p>
+      </div>
+      <div class="space-y-6">
+        <h6 class="font-cyber text-[10px] text-cyan-400 tracking-widest uppercase">Digital_Networks</h6>
+        <ul class="font-tech text-gray-500 space-y-4">
+          <li><a href="https://www.linkedin.com/in/alan-loru-servicedesk/" class="hover:text-cyan-400 transition">>>
+              LinkedIn_Profile</a></li>
+          <li><a href="https://github.com/alanloru33" class="hover:text-cyan-400 transition">>> GitHub_Access</a></li>
+          <li><a href="mailto:alanloru26@gmail.com" class="hover:text-cyan-400 transition">>> Send_Email</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6 class="font-cyber text-[10px] text-magenta-500 tracking-widest uppercase">Contact_Uplink</h6>
+        <p class="font-cyber text-2xl text-white mt-4">+54 11 5105-6797</p>
+        <p class="font-mono text-[9px] text-gray-600 mt-2 uppercase tracking-tighter">Verified_Phone // WhatsApp_Secured
+        </p>
+      </div>
     </div>
     <div class="text-center mt-40 font-mono text-[8px] text-gray-700 tracking-[1em] uppercase">
-        © 2026 // ALAN_LORU // CYBER_SECURITY_INFRASTRUCTURE // GRAND_BOURG
+      © 2026 // ALAN_LORU // CYBER_SECURITY_INFRASTRUCTURE // GRAND_BOURG
     </div>
   </footer>
 
@@ -375,15 +497,15 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     const alphabet = '01ABCDEF-ALAN-LORU-SOC-TECH-987654321';
-    const drops = Array(Math.floor(canvas.width/16)).fill(1);
+    const drops = Array(Math.floor(canvas.width / 16)).fill(1);
     function draw() {
       ctx.fillStyle = 'rgba(2, 2, 5, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = '#00ffff'; ctx.font = '15px Fira Code';
       drops.forEach((y, i) => {
-        const text = alphabet[Math.floor(Math.random()*alphabet.length)];
-        ctx.fillText(text, i*16, y*16);
-        if(y*16 > canvas.height && Math.random() > 0.98) drops[i] = 0;
+        const text = alphabet[Math.floor(Math.random() * alphabet.length)];
+        ctx.fillText(text, i * 16, y * 16);
+        if (y * 16 > canvas.height && Math.random() > 0.98) drops[i] = 0;
         drops[i]++;
       });
     }
@@ -407,7 +529,7 @@
     function addLog() {
       const p = document.createElement('p');
       p.className = "mb-2";
-      p.innerHTML = `<span class="text-gray-600">[${new Date().toLocaleTimeString()}]</span> <span class="text-white">alan@root:~$</span> ${logs[lIdx%logs.length]}`;
+      p.innerHTML = `<span class="text-gray-600">[${new Date().toLocaleTimeString()}]</span> <span class="text-white">alan@root:~$</span> ${logs[lIdx % logs.length]}`;
       feed.appendChild(p);
       feed.scrollTop = feed.scrollHeight;
       lIdx++;
@@ -419,20 +541,19 @@
     const sfx = document.getElementById('click-sfx');
     function toggleMusic() {
       const ui = document.getElementById('audio-ui');
-      if(music.paused) { music.play(); ui.innerText = 'ON'; }
+      if (music.paused) { music.play(); ui.innerText = 'ON'; }
       else { music.pause(); ui.innerText = 'OFF'; }
     }
     function playSFX() { sfx.currentTime = 0; sfx.play(); }
 
     // 4. TRIGGER SKILLS
     window.addEventListener('scroll', () => {
-        document.querySelectorAll('.skill-fill').forEach(bar => {
-            const rect = bar.getBoundingClientRect();
-            if(rect.top < window.innerHeight) bar.style.width = bar.parentElement.dataset.value || "90%";
-        });
+      document.querySelectorAll('.skill-fill').forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        if (rect.top < window.innerHeight) bar.style.width = bar.parentElement.dataset.value || "90%";
+      });
     });
   </script>
 </body>
 
 </html>
-
